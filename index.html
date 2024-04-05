@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juevo de Cartas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="all">
+        <div class="panel panel_pokemon">
+            <div class="panel_pokemon--img">
+                <img src="./img/titulo_pokemon.png" alt="">
+            </div>
+            <h2>PokeAPI</h2>
+            <button class="btn-panel" data-id ="panel_pokemon">Iniciar</button>
+        </div>
+        <div class="panel panel_rick">
+            <div class="panel_rick--img">
+                <img src="./img/logo_rickYMorty.png" alt="">
+            </div>
+            <h2>Rick and Morty API</h2>
+            <button class="btn-panel" data-id="panel_rick">Iniciar</button>
+        </div>
+        <div class="panel panel_coctel">
+            <div class="panel_coctel--img">
+                <img src="./img/titulo_cocteles.png" alt="">
+            </div>
+            <h2>CocktailDB</h2>
+            <button class="btn-panel" data-id="panel_coctel">Iniciar</button>
+        </div>
+        <main>
+            <section class="controles">
+                <div class="cont_total_parejas">
+                    <p>Total parejas</p>
+                    <p class="total_parejas">0/20</p>
+                </div>
+            </section>
+            <section class="cartas">
+
+            </section>
+        </main>
+        <button class="cerrar_juego btn-panel">Cerrar</button>
+    </div>
+    <script src="./js/index.js" type="module"></script>
+</body>
+</html>

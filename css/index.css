@@ -1,0 +1,224 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Comic Neue", cursive;
+}
+.all {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.panel {
+    position: absolute;
+    z-index: 5;
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(94deg, rgb(10 10 10) 0%, rgb(199 63 63) 50%);
+    transition: transform 1s ease;
+    box-shadow: 0px 0px 13px 5px #000000;
+}
+.panel h2 {
+    text-align: center;
+}
+
+.panel:first-of-type {
+    top: 0;
+    left: 0;
+}
+.panel:nth-of-type(2){
+    width: 33.4%;
+    left: 33.3%;
+}
+.panel:nth-of-type(3){
+    right: 0;
+}
+.panel_pokemon.active {
+    transform: translate(0,-102%);
+    transition-delay: .7s;
+}
+.panel_pokemon--img, .panel_rick--img, .panel_coctel--img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform .5s ease;
+}
+.panel_pokemon--img img, .panel_rick--img img, .panel_coctel--img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.panel_rick.active {
+    transform: translate(0,-102%);
+    transition-delay: 1s;
+}
+.panel_coctel.active {
+    transform: translate(0,-102%);
+    transition-delay: 1.3s;
+}
+.btn-panel {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+main.responsive {
+    justify-content: center;
+    align-items: center;
+}
+.informacion-mobil{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.informacion-mobil p {
+    text-align: center;
+}
+.cerrar_juego {
+    position: absolute;
+    top: 2vh;
+    left: 1vw;
+
+}
+.controles {
+    flex-grow: 1;
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont_total_parejas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cont_total_parejas p {
+    font-size: 20px;
+}
+.cont_total_parejas p:first-child {
+    margin-bottom: 10px;
+}
+
+.cartas {
+    width: 400px;
+    flex-grow: 17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+
+/* --------cartas ---------- */
+
+.caja_carta {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.tapa_carta {
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+}
+.carta {
+    width: inherit;
+    height: inherit;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease, opacity 1s ease, visibility 1s ease;
+    position: relative;
+    cursor: pointer;
+}
+.carta.rotar {
+    transform: rotateY(180deg);
+}
+.carta.quitar_carta {
+    opacity: 0;
+    visibility: hidden;    
+    cursor: none;
+}
+.atras, .frente {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    border-radius: 15px;
+}
+.atras {
+    background-color: #000;
+    color: #fff;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.atras .liston {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(248, 211, 0);
+    transform: rotate(35deg);
+    position: relative;
+    left: 22px;
+}
+.frente {
+    background-color: #fff;
+    transform: rotateY(180deg);
+    overflow: hidden;
+    background-color: #2c2c2c;
+}
+.frente .img_rick {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #25b09b;
+    --_m: 
+      conic-gradient(#0000 10%,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {to{transform: rotate(1turn)}}
